@@ -12,12 +12,13 @@
         <p th:unless="${menus} and ${menus.size()}">no category :(</p>
 
 
-        <ul>
-            <li th:each="menu" : ${menus}">
+        <table class="table">
 
-                <div th:text="${menu.name}"></div>
-            </li>
-        </ul>
+            <tr th:each="menu : ${menus}">
+                <td><a th:href="@{'/menu/view/' + ${menu.id}} " th:text=" ${menu.name}">Edit</a></td>
+            </tr>
+
+        </table>
         <div><a href="/menu/add">Add Menu</a></div>
 
 

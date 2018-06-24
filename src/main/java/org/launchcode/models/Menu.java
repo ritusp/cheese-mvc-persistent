@@ -18,8 +18,7 @@ private int id;
 private String name;
 
 @ManyToMany
-@JoinColumn(name="menu_id")
-private List<Cheese> cheeses = new ArrayList<>();
+private List<Cheese> cheeses;
 
 
     public Menu() {
@@ -30,13 +29,18 @@ private List<Cheese> cheeses = new ArrayList<>();
     }
 
     public void addItem(Cheese item){
-
+        cheeses.add(item);
     }
+
+    public List<Cheese> getCheeses() {
+        return cheeses;
+    }
+
     public int getId() {
         return id;
     }
 
-        public String getName() {
+    public String getName() {
         return name;
     }
 
